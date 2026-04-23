@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdullah | Software Engineer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+ 
+  <nav>
+    <div class="nav-logo">&lt;Abdullah /&gt;</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+ 
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+ 
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        AVAILABLE FOR WORK
+      </div>
+
+      <div class="hero-avatar">AS</div>
+
+      <h1 class="hero-name">Abdullah</h1>
+
+      <div class="hero-typewriter">
+        <span class="typewriter-text" id="typewriter"></span>
+      </div>
+
+      <p class="hero-desc">
+        A passionate Software Engineer from Lahore, Pakistan — building modern,
+        responsive web experiences with clean code and creative solutions.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary"><span>View My Work</span></a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com/Abdullah-sarvar" target="_blank" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/abdullah-sarwar-b26341392" target="_blank" class="social-link">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:rajpootabdullahra098@gmail.com" class="social-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+ 
+  <section id="about">
+    <div class="section-label">01 &mdash; About Me</div>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hi! I'm <strong>Abdullah</strong>, a Software Engineer based in Lahore, Pakistan.
+          I'm currently pursuing my BS in Computer Science at the
+          <strong>National University of Modern Languages</strong> with a CGPA of 3.03.
+        </p>
+        <p>
+          I love turning ideas into real, working products — from pixel-perfect frontends
+          to full-stack solutions. I've worked with React, Next.js, FastAPI, ASP.NET and more.
+        </p>
+        <p>
+          Beyond coding, I've also handled Amazon FBA/FBM seller accounts as a freelancer —
+          which taught me a lot about real business operations.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Projects Deployed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">7+</span>
+          <span class="stat-label">Languages Known</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">1+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Lines of Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-label">02 &mdash; Skills</div>
+    <h2 class="section-title">What I Work With</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-code"></i></div>
+        <h3>Languages</h3>
+        <div class="skill-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          <span>TypeScript</span><span>C++</span><span>C#</span><span>Python</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>Frameworks</h3>
+        <div class="skill-tags">
+          <span>React</span><span>Next.js</span><span>ASP.NET</span>
+          <span>FastAPI</span><span>Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-tools"></i></div>
+        <h3>Tools</h3>
+        <div class="skill-tags">
+          <span>VS Code</span><span>GitHub</span><span>NPM</span>
+          <span>Vite</span><span>Vercel</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-label">03 &mdash; Projects</div>
+    <h2 class="section-title">What I've Built</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-icon"><i class="fab fa-amazon"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abdullah-sarvar/amazon-fronted" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://amazon-fronted-rho.vercel.app" target="_blank" title="Live">
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <h3>Amazon Clone</h3>
+        <p>A fully responsive Amazon frontend clone with product listings, cart functionality, and pixel-accurate UI — deployed on Vercel.</p>
+        <div class="project-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-robot"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abdullah-sarvar/AI-PROMPT" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://ai-prompt-lemon.vercel.app" target="_blank" title="Live">
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+        <h3>AI Prompt Generator</h3>
+        <p>A web tool that helps users generate optimized AI prompts with a clean, interactive UI built with vanilla JavaScript.</p>
+        <div class="project-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-film"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abdullah-sarvar/movie-app-react" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>Movie App</h3>
+        <p>A React-based movie browsing app with component-based architecture, search, filtering and detail views using React hooks.</p>
+        <div class="project-tags">
+          <span>React</span><span>JavaScript</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-label">04 &mdash; Experience</div>
+    <h2 class="section-title">My Journey</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2024 — Present</div>
+        <div class="timeline-content">
+          <h3>Amazon Virtual Assistant <span class="timeline-type">Freelance</span></h3>
+          <p>Managed Amazon FBA and FBM seller accounts end-to-end. Handled product listings, inventory management, order fulfillment, and optimized listings for better visibility and conversion rates.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2024 — 2028</div>
+        <div class="timeline-content">
+          <h3>BS Computer Science <span class="timeline-type">NUML, Lahore</span></h3>
+          <p>Studying core CS fundamentals — Data Structures & Algorithms, OOP, Database Systems, Software Engineering & Design Patterns. CGPA: 3.03</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-label">05 &mdash; Contact</div>
+    <h2 class="section-title">Let's Work Together</h2>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <p class="contact-desc">
+          Got a project idea or want to collaborate? Feel free to reach out —
+          I typically respond within 24 hours.
+        </p>
+
+        <div class="contact-items">
+          <a href="mailto:rajpootabdullahra098@gmail.com" class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-item-label">Email</span>
+              <span class="contact-item-value">rajpootabdullahra098@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/abdullah-sarwar-b26341392" target="_blank" class="contact-item">
+            <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <span class="contact-item-label">LinkedIn</span>
+              <span class="contact-item-value">abdullah-sarwar-b26341392</span>
+            </div>
+          </a>
+          <a href="https://github.com/Abdullah-sarvar" target="_blank" class="contact-item">
+            <div class="contact-item-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <span class="contact-item-label">GitHub</span>
+              <span class="contact-item-value">Abdullah-sarvar</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="Subject" required />
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Your Message..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; cursor:pointer;">
+          <span>Send Message &nbsp;<i class="fas fa-paper-plane"></i></span>
+        </button>
+        <div class="form-success" id="formSuccess">
+          ✅ Message sent! I'll get back to you soon.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="nav-logo">&lt;Abdullah /&gt;</span>
+      <p>Designed & Built by Abdullah &copy; 2026</p>
+      <div class="footer-socials">
+        <a href="https://github.com/Abdullah-sarvar" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/abdullah-sarwar-b26341392" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:rajpootabdullahra098@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
