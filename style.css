@@ -755,10 +755,19 @@ section:not(.hero) {
   font-family: 'Space Mono', monospace;
   font-weight: 400;
 }
-.timeline-content p {
+.timeline-content p,
+.timeline-content ul {
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.8;
+}
+
+.timeline-content ul {
+  margin: 14px 0 0 16px;
+  padding-left: 14px;
+}
+.timeline-content ul li {
+  margin-bottom: 10px;
 }
 
 .contact-wrapper {
