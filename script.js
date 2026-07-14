@@ -1,4 +1,4 @@
-emailjs.init("YOUR_PUBLIC_KEY");
+emailjs.init("8NGjaninuw213JzCQ");
 
 const cursor = document.getElementById('cursor');
 const trail = document.getElementById('cursorTrail');
@@ -128,7 +128,7 @@ function handleSubmit(e) {
   btn.innerHTML = '<span>Sending... &nbsp;<i class="fas fa-spinner fa-spin"></i></span>';
   btn.disabled = true;
 
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target)
+  emailjs.sendForm('service_mw7cxgl', 'template_5pb7mcq', e.target)
     .then(() => {
       btn.innerHTML = '<span>Send Message &nbsp;<i class="fas fa-paper-plane"></i></span>';
       btn.disabled = false;
@@ -140,7 +140,7 @@ function handleSubmit(e) {
       console.error('EmailJS error:', err);
       btn.innerHTML = '<span>Send Message &nbsp;<i class="fas fa-paper-plane"></i></span>';
       btn.disabled = false;
-      alert('Message send nahi hua, dobara try karo.');
+      alert('Something went wrong. Please try again.');
     });
 }
 
