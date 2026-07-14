@@ -1,3 +1,5 @@
+emailjs.init("YOUR_PUBLIC_KEY");
+
 const cursor = document.getElementById('cursor');
 const trail = document.getElementById('cursorTrail');
 let trailX = 0, trailY = 0;
@@ -126,13 +128,20 @@ function handleSubmit(e) {
   btn.innerHTML = '<span>Sending... &nbsp;<i class="fas fa-spinner fa-spin"></i></span>';
   btn.disabled = true;
 
-  setTimeout(() => {
-    btn.innerHTML = '<span>Send Message &nbsp;<i class="fas fa-paper-plane"></i></span>';
-    btn.disabled = false;
-    document.getElementById('formSuccess').classList.add('show');
-    e.target.reset();
-    setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 4000);
-  }, 1500);
+  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target)
+    .then(() => {
+      btn.innerHTML = '<span>Send Message &nbsp;<i class="fas fa-paper-plane"></i></span>';
+      btn.disabled = false;
+      document.getElementById('formSuccess').classList.add('show');
+      e.target.reset();
+      setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 4000);
+    })
+    .catch((err) => {
+      console.error('EmailJS error:', err);
+      btn.innerHTML = '<span>Send Message &nbsp;<i class="fas fa-paper-plane"></i></span>';
+      btn.disabled = false;
+      alert('Message send nahi hua, dobara try karo.');
+    });
 }
 
 
