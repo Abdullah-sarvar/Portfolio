@@ -8,14 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
-
 
   <div class="cursor" id="cursor"></div>
   <div class="cursor-trail" id="cursorTrail"></div>
 
- 
   <nav>
     <div class="nav-logo">&lt;Abdullah /&gt;</div>
     <ul class="nav-links">
@@ -25,12 +26,15 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+    </button>
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
- 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#about" onclick="closeMenu()">About</a></li>
@@ -41,11 +45,9 @@
     </ul>
   </div>
 
- 
   <section class="hero" id="home">
+    <canvas id="heroCanvas"></canvas>
     <div class="hero-grid"></div>
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
 
     <div class="hero-content">
       <div class="hero-badge">
@@ -62,8 +64,9 @@
       </div>
 
       <p class="hero-desc">
-        A passionate Software Engineer from Lahore, Pakistan — building modern,
-        responsive web experiences with clean code and creative solutions.
+        Backend-focused Software Engineering student building production-style
+        systems with Clean Architecture, CQRS, and the MERN stack — currently
+        integrating AI APIs into full-stack projects.
       </p>
 
       <div class="hero-btns">
@@ -90,29 +93,31 @@
     </div>
   </section>
 
- 
   <section id="about">
     <div class="section-label">01 &mdash; About Me</div>
     <h2 class="section-title">Who I Am</h2>
     <div class="about-grid">
       <div class="about-text">
         <p>
-          Hi! I'm <strong>Abdullah</strong>, a Software Engineer based in Lahore, Pakistan.
+          Hi! I'm <strong>Abdullah</strong>, a backend-focused Software Engineering
+          student based in Lahore, Pakistan, building production-style systems
+          using Clean Architecture, CQRS, and the MERN stack.
+        </p>
+        <p>
           I'm currently pursuing my BS in Computer Science at the
-          <strong>National University of Modern Languages</strong> with a CGPA of 3.03.
+          <strong>National University of Modern Languages</strong> with a CGPA
+          of 3.03, and integrating AI APIs (Gemini) into full-stack projects as
+          I work toward becoming an AI Integration Engineer.
         </p>
         <p>
-          I love turning ideas into real, working products — from pixel-perfect frontends
-          to full-stack solutions. I've worked with React, Next.js, FastAPI, ASP.NET and more.
-        </p>
-        <p>
-          Beyond coding, I've also handled Amazon FBA/FBM seller accounts as a freelancer —
-          which taught me a lot about real business operations.
+          I design role-based, API-driven applications with real-world security
+          and scalability in mind — from multi-tenant SaaS backends to
+          sentiment analysis platforms.
         </p>
       </div>
       <div class="about-stats">
         <div class="stat-card">
-          <span class="stat-num">3+</span>
+          <span class="stat-num">4+</span>
           <span class="stat-label">Projects Deployed</span>
         </div>
         <div class="stat-card">
@@ -124,7 +129,7 @@
           <span class="stat-label">Years Experience</span>
         </div>
         <div class="stat-card">
-          <span class="stat-num">∞</span>
+          <span class="stat-num">&infin;</span>
           <span class="stat-label">Lines of Code</span>
         </div>
       </div>
@@ -150,7 +155,16 @@
         <h3>Frameworks</h3>
         <div class="skill-tags">
           <span>React</span><span>Next.js</span><span>ASP.NET</span>
-          <span>FastAPI</span><span>Tailwind CSS</span>
+          <span>Laravel</span><span>FastAPI</span><span>Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon"><i class="fas fa-server"></i></div>
+        <h3>Backend &amp; APIs</h3>
+        <div class="skill-tags">
+          <span>REST APIs</span><span>JWT Auth</span><span>MongoDB</span>
+          <span>MySQL</span><span>Gemini API</span>
         </div>
       </div>
 
@@ -159,7 +173,7 @@
         <h3>Tools</h3>
         <div class="skill-tags">
           <span>VS Code</span><span>GitHub</span><span>NPM</span>
-          <span>Vite</span><span>Vercel</span>
+          <span>Vite</span><span>Vercel</span><span>Postman</span><span>Docker</span>
         </div>
       </div>
 
@@ -170,6 +184,54 @@
     <div class="section-label">03 &mdash; Projects</div>
     <h2 class="section-title">What I've Built</h2>
     <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-vote-yea"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abdullah-sarvar/VOTING-SYSTEM" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>VoteHub — University E-Voting System</h3>
+        <p>A full-stack e-voting system with 5-role RBAC (Student, Teacher, HOD, RD, Admin), OTP-based recovery over Gmail SMTP, a complaint-handling system, and election filtering by section/department — backed by complete UML design.</p>
+        <div class="project-tags">
+          <span>Laravel</span><span>PHP</span><span>MySQL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-comment-dots"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abdullah-sarvar/SentimentAnalyzer" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>Sentinel — Review Sentiment Analysis Platform</h3>
+        <p>A sentiment analysis platform built with Clean/Onion Architecture and CQRS via MediatR, integrating the Gemini API with a lexicon-based fallback for reliability. Uses FluentValidation and an EF Core data layer.</p>
+        <div class="project-tags">
+          <span>ASP.NET Core</span><span>MediatR/CQRS</span><span>EF Core</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="project-links">
+            <a href="https://github.com/Abdullah-sarvar/EduVerse-Platform" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>EduVerse — Multi-University Academic Platform</h3>
+        <p>A multi-tenant academic platform backend with JWT auth/RBAC, Attendance, Assignments, auto-graded Quizzes, a GPA/CGPA engine, and messaging — tested via Postman. Per-university tenant isolation using MongoDB (Mongoose useDb()).</p>
+        <div class="project-tags">
+          <span>MERN Stack</span><span>JWT</span><span>Socket.IO</span>
+        </div>
+      </div>
 
       <div class="project-card">
         <div class="project-top">
@@ -206,22 +268,6 @@
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="project-top">
-          <div class="project-icon"><i class="fas fa-vote-yea"></i></div>
-          <div class="project-links">
-            <a href="#" title="Details">
-              <i class="fas fa-info-circle"></i>
-            </a>
-          </div>
-        </div>
-        <h3>VoteHub — University E-Voting System</h3>
-        <p>A secure electronic voting system for university elections, featuring a multi-role faculty hierarchy (Teacher, Coordinator, HOD, Regional Director), OTP-based password reset, a complaint cell, session-based auto-redirects, and a full admin panel with audit-ready vote tallying.</p>
-        <div class="project-tags">
-          <span>PHP</span><span>Laravel</span><span>MySQL</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -232,23 +278,22 @@
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2024 — Present</div>
+        <div class="timeline-date">May 2026 — Jun 2026</div>
         <div class="timeline-content">
-          <h3>Amazon Virtual Assistant <span class="timeline-type">Freelance</span></h3>
-          <p>Managed Amazon FBA and FBM seller accounts end-to-end. Handled product listings, inventory management, order fulfillment, and optimized listings for better visibility and conversion rates.</p>
+          <h3>Web Development Intern — Upvista Digital <span class="timeline-type">Internship</span></h3>
+          <ul>
+            <li>Contributed to real-world frontend development tasks under founding team mentorship, delivering multiple production-facing UI features</li>
+            <li>Demonstrated rapid technical growth across frontend workflows in a live product environment</li>
+          </ul>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">May 2026 — Jun 2026</div>
+        <div class="timeline-date">2024 — Present</div>
         <div class="timeline-content">
-          <h3>Web Development Intern — Upvista Digital <span class="timeline-type">Internship</span></h3>
-          <ul>
-            <li>Worked on real-world web development projects</li>
-            <li>Contributed to frontend development tasks and UI implementation</li>
-            <li>Collaborated with the development team in a professional environment</li>
-          </ul>
+          <h3>Tech Team Lead <span class="timeline-type">ACMR — NUML Chapter</span></h3>
+          <p>Led the Tech Team for one year, overseeing technical projects and coordinating team responsibilities. Strengthened leadership, communication, and decision-making skills through team management and event coordination.</p>
         </div>
       </div>
 
@@ -257,7 +302,7 @@
         <div class="timeline-date">2024 — 2028</div>
         <div class="timeline-content">
           <h3>BS Computer Science <span class="timeline-type">NUML, Lahore</span></h3>
-          <p>Studying core CS fundamentals — Data Structures & Algorithms, OOP, Database Systems, Software Engineering & Design Patterns. CGPA: 3.03</p>
+          <p>Coursework: Data Structures &amp; Algorithms, OOP, Database Systems, Software Engineering &amp; Design Patterns, Advanced Programming, AI, Web Development. CGPA: 3.03</p>
         </div>
       </div>
 
